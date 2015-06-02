@@ -11,4 +11,5 @@
 @interface PIOMediaCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *instagramImageView;
+
 @end
