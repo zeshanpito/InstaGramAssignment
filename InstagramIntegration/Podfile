@@ -3,6 +3,7 @@
 
 target 'InstagramIntegration' do
     pod 'InstagramKit', '3.6.3'
+    pod 'FlickrKit', '1.0.5'
 end
 
 target 'InstagramIntegrationTests' do

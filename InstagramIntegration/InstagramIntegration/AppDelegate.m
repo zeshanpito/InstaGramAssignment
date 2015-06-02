@@ -10,6 +10,8 @@
 #import "PIOPictureCollectionViewController.h"
 #import "InstagramKit.h"
 
+#import "PIOFlickrViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,9 +23,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    PIOPictureCollectionViewController *mediaViewController = [PIOPictureCollectionViewController new];
-    
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:mediaViewController];
+    //PIOPictureCollectionViewController *mediaViewController = [PIOPictureCollectionViewController new];
+    PIOFlickrViewController *flickerViewController = [PIOFlickrViewController new];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:flickerViewController];
 //    self.navigationController.navigationBarHidden = YES;
     [self.window setRootViewController:self.navigationController];
     self.window.backgroundColor = [UIColor whiteColor];

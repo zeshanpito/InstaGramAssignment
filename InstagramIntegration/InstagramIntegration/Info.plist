@@ -35,6 +35,14 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.putitout.durexreconnect</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>Mobile Development</string>
+			</array>
+		</dict>
+		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>Mobile Development</string>

@@ -20,14 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FlickrKit (1.0.5)
   - InstagramKit (3.6.3):
     - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
+  - FlickrKit (= 1.0.5)
   - InstagramKit (= 3.6.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  FlickrKit: fc0ed009c5cb69db4d82e68f7acb02002ebe1a42
   InstagramKit: d378c535e012cc49926a97fc64a07213e0f050e3
 
 COCOAPODS: 0.37.2
