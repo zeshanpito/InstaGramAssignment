@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="collectionView" destination="6In-Iq-LhG" id="4jE-nh-bWa"/>
                 <outlet property="loginButton" destination="ju8-nH-ZhW" id="rMa-dz-aT0"/>
+                <outlet property="uploadImageButton" destination="DHx-cw-6Cm" id="i6p-nM-9A0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,6 +39,16 @@
                     </state>
                     <connections>
                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="GBf-Hc-E7n"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DHx-cw-6Cm">
+                    <rect key="frame" x="165" y="96" width="103" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Upload image">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="uploadImageButtonPressed:" destination="-1" eventType="touchUpInside" id="is3-Ze-ZET"/>
                     </connections>
                 </button>
             </subviews>

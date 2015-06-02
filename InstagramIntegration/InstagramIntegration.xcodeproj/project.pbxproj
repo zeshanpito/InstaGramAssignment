@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3119961F1B1D968F00C7B9B0 /* images.igo */ = {isa = PBXFileReference; lastKnownFileType = file; path = images.igo; sourceTree = "<group>"; };
 		311B2D481B18511E00965248 /* PIOLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOLoginViewController.h; sourceTree = "<group>"; };
 		311B2D491B18511E00965248 /* PIOLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIOLoginViewController.m; sourceTree = "<group>"; };
 		311B2D4A1B18511E00965248 /* PIOLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PIOLoginViewController.xib; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 				318A5B311B1C6AA6009C448F /* PIOMediaCollectionViewCell.h */,
 				318A5B321B1C6AA6009C448F /* PIOMediaCollectionViewCell.m */,
 				318A5B331B1C6AA6009C448F /* PIOMediaCollectionViewCell.xib */,
+				3119961F1B1D968F00C7B9B0 /* images.igo */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -431,6 +433,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = InstagramIntegration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -443,6 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = InstagramIntegration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PIOPictureCollectionViewController : UIViewController
+@interface PIOPictureCollectionViewController : UIViewController <UIDocumentInteractionControllerDelegate>
 
 
 - (void)reloadMedia;

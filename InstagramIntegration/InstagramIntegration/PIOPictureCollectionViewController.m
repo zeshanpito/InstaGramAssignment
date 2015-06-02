@@ -21,8 +21,13 @@
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic, strong) InstagramPaginationInfo *currentPaginationInfo;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) InstagramEngine *instagramEngine;
+@property (weak, nonatomic) IBOutlet UIButton *uploadImageButton;
+@property (nonatomic, strong) UIDocumentInteractionController *documentController;
 
+- (IBAction)uploadImageButtonPressed:(id)sender;
 - (IBAction)loginButtonPressed:(id)sender;
+
 @end
 
 @implementation PIOPictureCollectionViewController
@@ -32,26 +37,15 @@
     // Do any additional setup after loading the view from its nib.
     /*[self.collectionView registerClass:[MediaCollectionViewCell class] forCellWithReuseIdentifier:@"instaGramCell"];*/
 
-    UINib *cellNib = [UINib nibWithNibName:@"MediaCollectionViewCell" bundle:nil];
+    UINib *cellNib = [UINib nibWithNibName:@"PIOMediaCollectionViewCell" bundle:nil];
     //[self.collectionView registerNib:cellNib forCellReuseIdentifier:@"instaGramCell"];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:@"instaGramCell"];
     self.images = [[NSMutableArray alloc] init];
+    self.instagramEngine = [InstagramEngine sharedEngine];
     
-}
-- (IBAction)reloadMediaFromScratch
-{
-    self.currentPaginationInfo = nil;
-    if (self.images) {
-        [self.images removeAllObjects];
-    }
-    
-    [self loadMedia];
+    [self fetchMediaImagesFromInstaGram];
 }
 
-- (void)loadMedia
-{
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -70,25 +64,40 @@
 {
     NSLog(@"buhahaha");
     //lets get the images from online instagram
-    InstagramEngine *sharedEngine = [InstagramEngine sharedEngine];
-    
-    if (sharedEngine.accessToken)
+    [self fetchMediaImagesFromInstaGram];
+}
+
+- (void)fetchMediaImagesFromInstaGram
+{
+    if (self.instagramEngine.accessToken)
     {
-        NSLog(@"%@",sharedEngine.accessToken);
-        
-        [[InstagramEngine sharedEngine] getSelfFeedWithCount:9 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
+        [self.instagramEngine getSelfFeedWithCount:9 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
             self.currentPaginationInfo = paginationInfo;
             if (self.images.count>0) {
                 [self.images removeAllObjects];
             }
             [self.images addObjectsFromArray:media];
-
+            
             [self.collectionView reloadData];
         } failure:^(NSError *error, NSInteger statusCode) {
             NSLog(@"Request Self Feed Failed");
         }];
     }
     
+}
+
+- (IBAction)uploadImageButtonPressed:(id)sender {
+    NSString* imagePath = [NSString stringWithFormat:@"%@/images.igo", [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]];
+    [[NSFileManager defaultManager] removeItemAtPath:imagePath error:nil];
+    
+    UIImage *instagramImage = [UIImage imageNamed:@"images"];
+    [UIImagePNGRepresentation(instagramImage) writeToFile:imagePath atomically:YES];
+    NSLog(@"Image Size >>> %@", NSStringFromCGSize(instagramImage.size));
+    
+    self.documentController=[UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:imagePath]];
+    self.documentController.delegate = self;
+    self.documentController.UTI = @"com.instagram.exclusivegram";
+    [self.documentController presentOpenInMenuFromRect: self.view.frame inView:self.view animated:YES ];
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
