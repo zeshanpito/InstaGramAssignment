@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "PIOPictureCollectionViewController.h"
 #import "InstagramKit.h"
-
 #import "PIOFlickrViewController.h"
 
 @interface AppDelegate ()
@@ -59,4 +58,17 @@
 {
     return [[InstagramEngine sharedEngine] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
+
+
+- (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSString *scheme = [url scheme];
+    NSLog(@"url scheme--> %@",scheme);
+    if([@"InstagramIntegration" isEqualToString:scheme]) {
+        // I don't recommend doing it like this, it's just a demo... I use an authentication
+        // controller singleton object in my projects
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserAuthCallbackNotification" object:url userInfo:nil];
+    }
+    return YES;
+}
+
 @end

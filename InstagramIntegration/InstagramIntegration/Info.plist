@@ -39,18 +39,10 @@
 			<string>com.putitout.durexreconnect</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>Mobile Development</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>Mobile Development</string>
+				<string>InstagramIntegration</string>
 			</array>
 		</dict>
 	</array>
-	<key>InstagramAppRedirectURL</key>
-	<string>http://www.putitout.co.uk</string>
 	<key>InstagramAppClientId</key>
 	<string>34e687cf919844978145af7eb6221bfc</string>
 </dict>

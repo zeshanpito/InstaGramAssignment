@@ -16,6 +16,8 @@
 		31591C101B1845E000493282 /* InstagramIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31591C0F1B1845E000493282 /* InstagramIntegrationTests.m */; };
 		318A5B341B1C6AA6009C448F /* PIOMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 318A5B321B1C6AA6009C448F /* PIOMediaCollectionViewCell.m */; };
 		318A5B351B1C6AA6009C448F /* PIOMediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318A5B331B1C6AA6009C448F /* PIOMediaCollectionViewCell.xib */; };
+		31A588771B1F151000CBD953 /* PIOFlickrAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A588751B1F151000CBD953 /* PIOFlickrAuthenticationViewController.m */; };
+		31A588781B1F151000CBD953 /* PIOFlickrAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A588761B1F151000CBD953 /* PIOFlickrAuthenticationViewController.xib */; };
 		31A7A2C51B18914A00F2CAE2 /* PIOPictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A7A2C31B18914A00F2CAE2 /* PIOPictureCollectionViewController.m */; };
 		31A7A2C61B18914A00F2CAE2 /* PIOPictureCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A7A2C41B18914A00F2CAE2 /* PIOPictureCollectionViewController.xib */; };
 		31CE28CE1B1DC2BD006A7F9F /* PIOFlickrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE28CC1B1DC2BD006A7F9F /* PIOFlickrViewController.m */; };
@@ -49,6 +51,9 @@
 		318A5B311B1C6AA6009C448F /* PIOMediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOMediaCollectionViewCell.h; sourceTree = "<group>"; };
 		318A5B321B1C6AA6009C448F /* PIOMediaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIOMediaCollectionViewCell.m; sourceTree = "<group>"; };
 		318A5B331B1C6AA6009C448F /* PIOMediaCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PIOMediaCollectionViewCell.xib; sourceTree = "<group>"; };
+		31A588741B1F151000CBD953 /* PIOFlickrAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOFlickrAuthenticationViewController.h; sourceTree = "<group>"; };
+		31A588751B1F151000CBD953 /* PIOFlickrAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIOFlickrAuthenticationViewController.m; sourceTree = "<group>"; };
+		31A588761B1F151000CBD953 /* PIOFlickrAuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PIOFlickrAuthenticationViewController.xib; sourceTree = "<group>"; };
 		31A7A2C21B18914A00F2CAE2 /* PIOPictureCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOPictureCollectionViewController.h; sourceTree = "<group>"; };
 		31A7A2C31B18914A00F2CAE2 /* PIOPictureCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIOPictureCollectionViewController.m; sourceTree = "<group>"; };
 		31A7A2C41B18914A00F2CAE2 /* PIOPictureCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PIOPictureCollectionViewController.xib; sourceTree = "<group>"; };
@@ -122,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				31CE28CA1B1DC2A4006A7F9F /* Flicker */,
-				31A7A2C11B18912B00F2CAE2 /* PIcture Collection */,
+				31A7A2C11B18912B00F2CAE2 /* Picture Collection */,
 				311B2D461B1850EC00965248 /* LoginView */,
 				31591BFD1B1845E000493282 /* AppDelegate.h */,
 				31591BFE1B1845E000493282 /* AppDelegate.m */,
@@ -169,7 +174,17 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
-		31A7A2C11B18912B00F2CAE2 /* PIcture Collection */ = {
+		31A588731B1F14E600CBD953 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				31A588741B1F151000CBD953 /* PIOFlickrAuthenticationViewController.h */,
+				31A588751B1F151000CBD953 /* PIOFlickrAuthenticationViewController.m */,
+				31A588761B1F151000CBD953 /* PIOFlickrAuthenticationViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		31A7A2C11B18912B00F2CAE2 /* Picture Collection */ = {
 			isa = PBXGroup;
 			children = (
 				318A5B301B1C67EA009C448F /* Cell */,
@@ -177,12 +192,13 @@
 				31A7A2C31B18914A00F2CAE2 /* PIOPictureCollectionViewController.m */,
 				31A7A2C41B18914A00F2CAE2 /* PIOPictureCollectionViewController.xib */,
 			);
-			name = "PIcture Collection";
+			name = "Picture Collection";
 			sourceTree = "<group>";
 		};
 		31CE28CA1B1DC2A4006A7F9F /* Flicker */ = {
 			isa = PBXGroup;
 			children = (
+				31A588731B1F14E600CBD953 /* Login */,
 				31CE28CB1B1DC2BD006A7F9F /* PIOFlickrViewController.h */,
 				31CE28CC1B1DC2BD006A7F9F /* PIOFlickrViewController.m */,
 				31CE28CD1B1DC2BD006A7F9F /* PIOFlickrViewController.xib */,
@@ -284,6 +300,7 @@
 				31A7A2C61B18914A00F2CAE2 /* PIOPictureCollectionViewController.xib in Resources */,
 				31591C011B1845E000493282 /* Images.xcassets in Resources */,
 				318A5B351B1C6AA6009C448F /* PIOMediaCollectionViewCell.xib in Resources */,
+				31A588781B1F151000CBD953 /* PIOFlickrAuthenticationViewController.xib in Resources */,
 				31CE28CF1B1DC2BD006A7F9F /* PIOFlickrViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +354,7 @@
 			files = (
 				31CE28CE1B1DC2BD006A7F9F /* PIOFlickrViewController.m in Sources */,
 				31591BFF1B1845E000493282 /* AppDelegate.m in Sources */,
+				31A588771B1F151000CBD953 /* PIOFlickrAuthenticationViewController.m in Sources */,
 				318A5B341B1C6AA6009C448F /* PIOMediaCollectionViewCell.m in Sources */,
 				31A7A2C51B18914A00F2CAE2 /* PIOPictureCollectionViewController.m in Sources */,
 				31591BFC1B1845E000493282 /* main.m in Sources */,
