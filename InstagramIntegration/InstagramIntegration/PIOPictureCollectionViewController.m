@@ -71,7 +71,7 @@
 {
     if (self.instagramEngine.accessToken)
     {
-        [self.instagramEngine getSelfFeedWithCount:9 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
+        [self.instagramEngine getSelfFeedWithCount:15 maxId:self.currentPaginationInfo.nextMaxId success:^(NSArray *media, InstagramPaginationInfo *paginationInfo) {
             self.currentPaginationInfo = paginationInfo;
             if (self.images.count>0) {
                 [self.images removeAllObjects];
@@ -120,7 +120,14 @@
     InstagramMedia *media = self.images[indexPath.row];
     //NSLog(@"%@",media);
     
-    [cell.instagramImageView setImageWithURL:media.thumbnailURL];
+    //[cell.instagramImageView setImageWithURL:media.thumbnailURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:media.thumbnailURL];
+    [cell.instagramImageView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        
+    }];
+    
     /*NSURLRequest *request = [NSURLRequest requestWithURL:media.thumbnailURL];
     [cell.instagramImageView setImageWithURLRequest:request
                           placeholderImage:nil
